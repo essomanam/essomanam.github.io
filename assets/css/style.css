@@ -11,37 +11,36 @@
 }
 
 :root {
-    --bg: #0b0d1a;
-    --surface: #151832;
-    --surface-2: #1e2245;
-    --border: #2a2f5a;
-    --text: #f1f2fb;
-    --text-muted: #a3a8cc;
-    --text-faint: #6d7299;
-    --accent: #8b5cf6;          /* violet électrique */
-    --accent-2: #22d3ee;        /* cyan */
-    --accent-3: #f472b6;        /* rose (touches) */
-    --on-accent: #ffffff;
-    --gradient: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
-    --glow: 0 10px 40px rgba(139, 92, 246, 0.35);
-    --shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
-    --radius: 18px;
+    --bg: #121412;
+    --surface: #1a1d1a;
+    --surface-2: #242823;
+    --border: #33382f;
+    --text: #eceae3;
+    --text-muted: #a9a89d;
+    --text-faint: #75746b;
+    --accent: #e3a83b;          /* or safran */
+    --accent-2: #5fae84;        /* vert (touches) */
+    --on-accent: #121412;
+    --gradient: linear-gradient(var(--accent), var(--accent));   /* couleur unie */
+    --glow: 0 4px 14px rgba(0, 0, 0, 0.35);
+    --shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    --radius: 14px;
     --pad-x: clamp(1rem, 12vw, 16rem);
 }
 
 .light-mode {
-    --bg: #f7f5ff;
-    --surface: #ffffff;
-    --surface-2: #efeafd;
-    --border: #ddd5f7;
-    --text: #1d1838;
-    --text-muted: #57507a;
-    --text-faint: #8b84ab;
-    --accent: #6d28d9;
-    --accent-2: #db2777;
-    --accent-3: #f59e0b;
-    --glow: 0 10px 40px rgba(109, 40, 217, 0.25);
-    --shadow: 0 6px 24px rgba(60, 30, 120, 0.12);
+    --bg: #f4f0e6;
+    --surface: #fffdf8;
+    --surface-2: #e9e3d4;
+    --border: #dcd4c2;
+    --text: #1e2420;
+    --text-muted: #565b52;
+    --text-faint: #8d8d82;
+    --accent: #1f5c42;          /* vert profond */
+    --accent-2: #b5761f;        /* ocre */
+    --on-accent: #fffdf8;
+    --glow: 0 4px 14px rgba(40, 35, 20, 0.12);
+    --shadow: 0 2px 10px rgba(40, 35, 20, 0.08);
 }
 
 html {
@@ -84,6 +83,7 @@ strong {
 
 /* Halo décoratif en arrière-plan */
 .bg-glow {
+    display: none;
     position: fixed;
     inset: 0;
     z-index: -2;
@@ -260,10 +260,7 @@ section {
     box-shadow: var(--shadow);
     display: flex;
     align-items: flex-end;
-    background:
-        radial-gradient(circle at 30% 20%, color-mix(in srgb, var(--accent) 35%, transparent), transparent 55%),
-        radial-gradient(circle at 70% 85%, color-mix(in srgb, var(--accent-2) 30%, transparent), transparent 55%),
-        var(--surface);
+    background-color: var(--surface-2);
 }
 
 .left-header .image img {
@@ -455,10 +452,10 @@ section {
     position: absolute;
     left: 50%;
     top: 0;
-    width: 40%;
-    height: 2px;
+    width: 60px;
+    height: 3px;
     transform: translateX(-50%);
-    background-image: linear-gradient(90deg, transparent, var(--accent), var(--accent-2), transparent);
+    background-color: var(--accent);
 }
 
 /* ============ À propos ============ */
@@ -756,12 +753,12 @@ section {
     filter: drop-shadow(0 6px 18px rgba(0, 0, 0, .3));
 }
 
-.g1 { background: linear-gradient(135deg, #7c3aed, #22d3ee); }
-.g2 { background: linear-gradient(135deg, #0ea5e9, #10b981); }
-.g3 { background: linear-gradient(135deg, #ec4899, #8b5cf6); }
-.g4 { background: linear-gradient(135deg, #f59e0b, #ef4444); }
-.g5 { background: linear-gradient(135deg, #6366f1, #06b6d4); }
-.g6 { background: linear-gradient(135deg, #14b8a6, #8b5cf6); }
+.g1 { background-color: #2f5d4a; }
+.g2 { background-color: #8a5a2b; }
+.g3 { background-color: #7a3b2e; }
+.g4 { background-color: #3d4a5c; }
+.g5 { background-color: #5b6236; }
+.g6 { background-color: #4a3f55; }
 
 .item-info {
     padding: 1.1rem 1.3rem 1.3rem;
@@ -787,10 +784,8 @@ section {
     gap: 1rem;
     padding: 1.5rem;
     text-align: center;
-    color: #fff;
-    background: linear-gradient(135deg,
-            color-mix(in srgb, var(--accent) 94%, transparent),
-            color-mix(in srgb, var(--accent-2) 94%, transparent));
+    color: var(--on-accent);
+    background-color: color-mix(in srgb, var(--accent) 96%, transparent);
     opacity: 0;
     transform: scale(.85);
     transition: all .4s ease;
@@ -819,14 +814,14 @@ section {
     align-items: center;
     justify-content: center;
     font-size: 1.3rem;
-    background-color: rgba(11, 13, 26, .85);
-    color: #fff;
+    background-color: var(--on-accent);
+    color: var(--accent);
     transition: all .3s ease;
 }
 
 .hover-items .icon:hover {
-    background-color: #fff;
-    color: #0b0d1a;
+    background-color: var(--bg);
+    color: var(--text);
     transform: translateY(-3px);
 }
 
