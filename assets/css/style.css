@@ -11,16 +11,22 @@
 }
 
 :root {
-    --bg: #121412;
-    --surface: #1a1d1a;
-    --surface-2: #242823;
-    --border: #33382f;
-    --text: #eceae3;
-    --text-muted: #a9a89d;
-    --text-faint: #75746b;
-    --accent: #e3a83b;          /* or safran */
-    --accent-2: #5fae84;        /* vert (touches) */
-    --on-accent: #121412;
+    /* Couleurs du drapeau togolais */
+    --tg-green: #006a4e;
+    --tg-yellow: #ffce00;
+    --tg-red: #d21034;
+    --tricolor: linear-gradient(90deg, var(--tg-red) 0 33.33%, var(--tg-yellow) 33.33% 66.66%, var(--tg-green) 66.66% 100%);
+
+    --bg: #0d1a14;
+    --surface: #13241c;
+    --surface-2: #1c3328;
+    --border: #244234;
+    --text: #f2f5f1;
+    --text-muted: #a8bbb0;
+    --text-faint: #6f877a;
+    --accent: var(--tg-yellow);  /* jaune */
+    --accent-2: #4cc38a;         /* vert clair (lisible sur fond sombre) */
+    --on-accent: #0d1a14;
     --gradient: linear-gradient(var(--accent), var(--accent));   /* couleur unie */
     --glow: 0 4px 14px rgba(0, 0, 0, 0.35);
     --shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
@@ -29,18 +35,18 @@
 }
 
 .light-mode {
-    --bg: #f4f0e6;
-    --surface: #fffdf8;
-    --surface-2: #e9e3d4;
-    --border: #dcd4c2;
-    --text: #1e2420;
-    --text-muted: #565b52;
-    --text-faint: #8d8d82;
-    --accent: #1f5c42;          /* vert profond */
-    --accent-2: #b5761f;        /* ocre */
-    --on-accent: #fffdf8;
-    --glow: 0 4px 14px rgba(40, 35, 20, 0.12);
-    --shadow: 0 2px 10px rgba(40, 35, 20, 0.08);
+    --bg: #ffffff;
+    --surface: #f5f8f6;
+    --surface-2: #e3ece6;
+    --border: #dbe5df;
+    --text: #17261e;
+    --text-muted: #4c5f54;
+    --text-faint: #87998e;
+    --accent: var(--tg-green);   /* vert */
+    --accent-2: var(--tg-red);   /* rouge */
+    --on-accent: #ffffff;
+    --glow: 0 4px 14px rgba(0, 60, 40, 0.12);
+    --shadow: 0 2px 10px rgba(0, 60, 40, 0.08);
 }
 
 html {
@@ -261,6 +267,17 @@ section {
     display: flex;
     align-items: flex-end;
     background-color: var(--surface-2);
+    position: relative;
+}
+
+.left-header .image::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 6px;
+    background-image: var(--tricolor);
 }
 
 .left-header .image img {
@@ -452,10 +469,10 @@ section {
     position: absolute;
     left: 50%;
     top: 0;
-    width: 60px;
-    height: 3px;
+    width: 90px;
+    height: 4px;
     transform: translateX(-50%);
-    background-color: var(--accent);
+    background-image: var(--tricolor);
 }
 
 /* ============ À propos ============ */
@@ -753,12 +770,9 @@ section {
     filter: drop-shadow(0 6px 18px rgba(0, 0, 0, .3));
 }
 
-.g1 { background-color: #2f5d4a; }
-.g2 { background-color: #8a5a2b; }
-.g3 { background-color: #7a3b2e; }
-.g4 { background-color: #3d4a5c; }
-.g5 { background-color: #5b6236; }
-.g6 { background-color: #4a3f55; }
+.g1, .g4 { background-color: var(--tg-green); }
+.image.g2, .image.g5 { background-color: var(--tg-yellow); color: #0d1a14; }
+.g3, .g6 { background-color: var(--tg-red); }
 
 .item-info {
     padding: 1.1rem 1.3rem 1.3rem;
