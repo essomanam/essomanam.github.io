@@ -27,7 +27,7 @@ Portfolio de Data Scientist en HTML/CSS/JS pur (aucune étape de build), prêt p
 
 ## Personnaliser
 
-- **Photo** : ajoute `assets/images/profile.jpg` et suis le commentaire dans la section Accueil de `index.html`.
+- **Photo** : remplace `assets/images/profile.webp` (photo détourée, fond transparent, 800×800).
 - **Projets** : copie un bloc `.portfolio-item` dans `index.html` ; remplace les liens `https://github.com/` par tes dépôts.
 - **Couleurs** : modifie `--accent` / `--accent-2` en haut de `assets/css/style.css` (thème sombre) et dans `.light-mode` (thème clair).
 - **Compétences** : change le pourcentage affiché et la valeur `--w` de chaque barre.
