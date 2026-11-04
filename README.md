@@ -1,6 +1,6 @@
 # Portfolio — Esso-Manam MANGANMANA
 
-Portfolio de Data Scientist en HTML/CSS/JS pur (aucune étape de build), prêt pour GitHub Pages.
+Portfolio d'ingénieur IA & Robotique en HTML/CSS/JS pur (aucune étape de build), prêt pour GitHub Pages.
 
 ## Structure
 
